@@ -11,15 +11,15 @@ DRPNN: Wei Y, Yuan Q, Shen H, et al. Boosting the Accuracy of Multispectral Imag
 
 （3）If you simply want to use the models trained by the author to fuse your data:
 
-a. Set your matlab path to the './Pansharpening' as where the code was put.
+a. Set your matlab path to this folder and add all sub-folders.
 
-b. Put your MS and Pan images in ./Pansharpening/testdata and use their filenames to replace 'QB_MS' and 'QB_PAN'in the file 'Demo_Pansharpening_4bands'.
+b. Put your MS and Pan images in ./testdata and use their filenames to replace 'QB_MS' and 'QB_PAN'in the file 'Demo_Pansharpening_4bands'.
 
 c. Select your mode in the 'Demo_Pansharpening_4bands' as described and run the demo.
 
-（4）If you want to train your own model：
+（4）If you want to train your own model, compile Caffe and its interface to matlab on your device at first, then follow the steps below：
 
-a. Put your MS and PAN training imageS in ./Pansharpening/Train_MSFusion as the given files.
+a. Put your MS and PAN training images in ./Train_MSFusion as the given files.
 
 b. Run the 'generate_train_QBfusion'. Note that the savepath of the .h5 file should be a full path.
 
@@ -30,3 +30,5 @@ d. Set the full path of 'train_QBfusion.txt' in the 'MSDCNN_net.prototxt'. The a
 e. Locate your current path in CMD, then run the command 'caffe train -solver solver.prototxt'.
 
 f. Get the trained model in the ./snapshots.
+
+g. Use the trained model as instructed in ‘Demo_Pansharpening_4bands’.
